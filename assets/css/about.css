@@ -1,0 +1,41 @@
+
+.why-choose-us{
+    margin-top: 10rem;
+}
+
+.why-choose-us .icon{
+    width: fit-content;
+    position: relative;
+}
+
+.why-choose-us .icon:after{
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background: rgba(59, 93, 80, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    right: -0.5rem;
+    bottom: 0;
+}
+
+.why-choose-us .img-wrapper:before{
+    position: absolute;
+    content: "";
+    width: 12rem;
+    height: 12rem;
+    background-image: url("../images/dots-yellow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-transform: translate(-40%, -40%);
+    -ms-transform: translate(-40%, -40%);
+    transform: translate(-40%, -40%);
+    z-index: -1;
+}
+
+@media (min-width: 768px) {
+    .why-choose-us{
+        margin-top: 15rem;
+    }
+}
