@@ -28,6 +28,7 @@ body{
     --text-white: #ffffff;
     --text-dark: #000000;
     --text-link: #3b5d50;
+    --text-link-blue: #00a2ff;
     --text-price: #c92127;
     --color-rating: #f7941d;
     --color-border: rgba(59, 93, 80, 0.8);
@@ -89,6 +90,11 @@ button:hover{
 
 .text-justify{
     text-align: justify;
+}
+
+/* Sublink box */
+.sublink{
+    background-color: var(--bg-sublink);
 }
 
 /* Header */
