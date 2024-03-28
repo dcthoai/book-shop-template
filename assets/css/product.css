@@ -135,6 +135,7 @@ body{
     margin-top: 3.5rem;
     border-radius: 0.5rem;
     padding: 1rem;
+    overflow: hidden;
 }
 
 .section-voucher .list-voucher{
@@ -293,3 +294,85 @@ body{
     font-weight: 400;
     color: #5d5d5d;
 }
+
+.descriptions{
+    margin-top: 3.5rem;
+    background-color: var(--bg-light);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.descriptions .description-text{
+    width: 100%;
+    text-align: justify;
+}
+
+.descriptions .description-text button{
+    background-color: transparent;
+    border: 0.125rem solid var(--text-price);
+    box-shadow: none;
+    color: var(--text-price);
+}
+
+.descriptions .tag{
+    color: #777;
+    font-size: 0.875rem;
+}
+
+.descriptions .info{
+    font-size: 0.875rem;
+}
+
+.descriptions .des-policy{
+    border-bottom: 0.0625rem solid #ccc;
+}
+
+.rating{
+    margin-top: 3.5rem;
+    background-color: var(--bg-light);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.rating .review__quantity{
+    text-align: center;
+    margin: 1.5rem;
+    min-width: 8rem;
+}
+
+.rating .review__quantity .rate{
+    font-size: 0.875rem;
+    color: #777;
+    width: 100%;
+}
+
+.rating .review__chart{
+    padding-left: 1rem;
+}
+
+.rating .review__chart .fa-star{
+    font-size: 0.875rem;
+    color: var(--bg-decoration);
+    padding-left: 0.25rem;
+    padding-right: 0.75rem;
+}
+
+.rating .review__chart .rating__progress{
+    width: 15rem;
+    height: 0.25rem;
+    background-color: #b3b2b2;
+    border-radius: 0.2rem;
+}
+
+.rating .review__chart .rating__progress span{
+    display: block;
+    width: 50%;
+    height: 0.25rem;
+    background-color: var(--bg-decoration);
+    border-radius: 0.2rem;
+}
+
+.rating .review__chart .rating__percent{
+    padding-left: 0.5rem;
+}
+
