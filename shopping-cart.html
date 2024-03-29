@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- CSS custom -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/shopping-cart.css">
 </head>
 
 <body>
@@ -52,74 +52,141 @@
     </header>
 
     <div class="header-margin"></div>
-
     <div class="popup" id="popup"></div>
 
-    <!-- Why choose us -->
-    <div class="why-choose-us">
+    <!-- Sublink -->
+    <div class="sublink py-4">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <h2 class="text-dark">Tại sao chọn chúng tôi?</h2>
-                    <p>
-                        Hãy lựa chọn chúng tôi vì chúng tôi cam kết cung cấp 
-                        giải pháp chất lượng và dịch vụ tận tâm, đáp ứng mọi nhu cầu của bạn.
-                    </p>
-                    
-                    <div class="row my-5">
-                        <div class="col-6 col-md-6">
-                            <div class="icon mb-3">
-                                <img src="assets/images/bag.svg" alt="Image">
-                            </div>
-    
-                            <h3 class="fs-5 text-dark">Mua hàng nhanh chóng</h3>
-                            <p class="text-justify">
-                                Tận hưởng trải nghiệm mua sắm không giới hạn với 
-                                dịch vụ mua hàng nhanh chóng của chúng tôi - 
-                                mọi thứ đều chỉ cách bạn một cú nhấp chuột!
-                            </p>
-                        </div>
-    
-                        <div class="col-6 col-md-6">
-                            <div class="icon mb-3">
-                                <img src="assets/images/return.svg" alt="Image">
-                            </div>
-          
-                            <h3 class="fs-5 text-dark">Hoàn trả miễn phí</h3>
-                            
-                            <p class="text-justify">
-                                Bạn có thể mua sắm thoải mái mà không cần lo lắng về việc chọn sai! Chính sách hoàn trả 
-                                miễn phí và nhanh chóng của chúng tôi sẽ khiến bạn hài lòng. 
-                            </p>
-                        </div>
-    
-                        <div class="col-6 col-md-6">
-                            <div class="icon mb-3">
-                                <img src="assets/images/truck.svg" alt="Image">
-                            </div>
-                            
-                            <h3 class="fs-5 text-dark">Nhanh &amp; Tiết kiệm</h3>
-                            
-                            <p class="text-justify">
-                                Đơn hàng sẽ được giao tới bạn nhanh nhất với chi phí vô cùng tiết kiệm.
-                            </p>
-                        </div>
-    
-                        <div class="col-6 col-md-6">
-                            <div class="icon mb-3">
-                                <img src="assets/images/support.svg" alt="Image">
-                            </div>
-    
-                            <h3 class="fs-5 text-dark">Hỗ trợ 24/7</h3>
-                            <p class="text-justify">Đội ngũ của chúng tôi luôn sẵn lòng để giúp bạn mọi lúc, mọi nơi.</p>
-                        </div>                    
-                    </div>
+            <div class="fs-6">
+                <h4 class="text-dark fw-bold">Shop</h4>
+
+                <div>
+                    <a class="text-decoration-none text-dark" href="index.html">Home</a>
+                    <span><i class="fa-solid fa-angle-right px-2"></i>Shop</span>
+                    <span><i class="fa-solid fa-angle-right px-2"></i>Shopping-cart</span>
                 </div>
-    
-                <div class="col-lg-5">
-                    <div class="mt-5 mt-lg-0 pb-5 img-wrapper">
-                        <img class="w-100 h-auto rounded-4" src="assets/images/why-choose-us-img.jpg" alt="Image">
-                    </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping cart -->
+    <div class="container shopping-cart">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="shopping__cart__table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="product__cart__item">
+                                    <div class="product__cart__item__pic">
+                                        <img src="layouts/img/shopping-cart/cart-1.jpg" alt="">
+                                    </div>
+                                    <div class="product__cart__item__text">
+                                        <h6>T-shirt Contrast Pocket</h6>
+                                        <h5>$98.49</h5>
+                                    </div>
+                                </td>
+                                <td class="quantity__item">
+                                    <div class="quantity">
+                                        <div class="pro-qty-2">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="cart__price">$ 30.00</td>
+                                <td class="cart__close"><i class="fa fa-close"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="product__cart__item">
+                                    <div class="product__cart__item__pic">
+                                        <img src="layouts/img/shopping-cart/cart-2.jpg" alt="">
+                                    </div>
+                                    <div class="product__cart__item__text">
+                                        <h6>Diagonal Textured Cap</h6>
+                                        <h5>$98.49</h5>
+                                    </div>
+                                </td>
+                                <td class="quantity__item">
+                                    <div class="quantity">
+                                        <div class="pro-qty-2">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="cart__price">$ 32.50</td>
+                                <td class="cart__close"><i class="fa fa-close"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="product__cart__item">
+                                    <div class="product__cart__item__pic">
+                                        <img src="layouts/img/shopping-cart/cart-3.jpg" alt="">
+                                    </div>
+                                    <div class="product__cart__item__text">
+                                        <h6>Basic Flowing Scarf</h6>
+                                        <h5>$98.49</h5>
+                                    </div>
+                                </td>
+                                <td class="quantity__item">
+                                    <div class="quantity">
+                                        <div class="pro-qty-2">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="cart__price">$ 47.00</td>
+                                <td class="cart__close"><i class="fa fa-close"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="product__cart__item">
+                                    <div class="product__cart__item__pic">
+                                        <img src="layouts/img/shopping-cart/cart-4.jpg" alt="">
+                                    </div>
+                                    <div class="product__cart__item__text">
+                                        <h6>Basic Flowing Scarf</h6>
+                                        <h5>$98.49</h5>
+                                    </div>
+                                </td>
+                                <td class="quantity__item">
+                                    <div class="quantity">
+                                        <div class="pro-qty-2">
+                                            <input type="text" value="1">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="cart__price">$ 30.00</td>
+                                <td class="cart__close"><i class="fa fa-close"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="continue__btn">
+                    <a href="#">Continue Shopping</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="cart__discount">
+                    <h6>Discount codes</h6>
+                    <form action="#">
+                        <input type="text" placeholder="Coupon code">
+                        <button type="submit">Apply</button>
+                    </form>
+                </div>
+                <div class="cart__total">
+                    <h6>Cart total</h6>
+                    <ul>
+                        <li>Subtotal <span>$ 169.50</span></li>
+                        <li>Total <span>$ 169.50</span></li>
+                    </ul>
+                    <a href="#" class="primary-btn">Proceed to checkout</a>
                 </div>
             </div>
         </div>

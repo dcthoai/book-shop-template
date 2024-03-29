@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 16px;
 }
 
-body{
+body {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     background-color: var(--bg-light);
@@ -35,7 +35,7 @@ body{
     --color-shadow: rgba(59, 93, 80, 0.5);
 }
 
-input{
+input {
     padding: 0.5rem 0;
     border: 0.0625rem solid var(--color-border);
     border-radius: 0.5rem;
@@ -46,33 +46,33 @@ input{
     transition: all ease 0.2s;
 }
 
-input:focus{
+input:focus {
     outline: none;
     border-color: var(--color-border);
     box-shadow: 0 0.0625rem 0.25rem 0 var(--color-shadow);
 }
 
-a{
+a {
     color: var(--text-link);
     font-weight: 600;
     text-decoration: none;
     transition: all linear 0.2s;
 }
 
-a:hover{
+a:hover {
     opacity: 0.75;
 }
 
-ul{
+ul {
     margin: 0;
     padding: 0;
 }
 
-li{
+li {
     list-style: none;
 }
 
-button{
+button {
     height: 2.625rem;
     max-height: 100%;
     padding: 0 1.6rem;
@@ -84,21 +84,21 @@ button{
     transition: all ease 0.2s;
 }
 
-button:hover{
+button:hover {
     opacity: 0.75;
 }
 
-.text-justify{
+.text-justify {
     text-align: justify;
 }
 
 /* Sublink box */
-.sublink{
+.sublink {
     background-color: var(--bg-sublink);
 }
 
 /* Header */
-.header{
+.header {
     width: 100%;
     position: fixed;
     top: 0;
@@ -106,11 +106,11 @@ button:hover{
     background-color: var(--bg-header);
 }
 
-.header a{
+.header a {
     color: var(--text-white);
 }
 
-.header .quantity-cart{
+.header .quantity-cart {
     width: 1.6rem;
     position: absolute;
     top: -0.5rem;
@@ -126,23 +126,23 @@ button:hover{
     z-index: 1;
 }
 
-.header-margin{
+.header-margin {
     margin-top: 5.625rem;
 }
 
 /* Footer */
-.footer{
+.footer {
     background-color: var(--bg-footer);
     padding-top: 5rem;
     margin-top: 5rem;
 }
 
-.footer .footer__logo{
+.footer .footer__logo {
     color: var(--bg-header);
     width: fit-content;
 }
 
-.footer .footer__social-link a{
+.footer .footer__social-link a {
     width: 2.5rem;
     height: 2.5rem;
     line-height: 2.75rem;
@@ -153,26 +153,26 @@ button:hover{
     border-radius: 50%;
 }
 
-@media (min-width: 768px){
-    .header .quantity-cart{
+@media (min-width: 768px) {
+    .header .quantity-cart {
         right: -0.35rem;
     }
 
-    .header .custom-navbar-link li a{
+    .header .custom-navbar-link li a {
         position: relative;
         font-weight: 600;
         opacity: 0.5;
     }
 
-    .header .custom-navbar-link li.active a{
+    .header .custom-navbar-link li.active a {
         opacity: 1;
     }
 
-    .header .custom-navbar-link li:hover a{
+    .header .custom-navbar-link li:hover a {
         opacity: 1;
     }
 
-    .header .custom-navbar-link li a::after{
+    .header .custom-navbar-link li a::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -189,21 +189,165 @@ button:hover{
         transition: .15s all ease-out;
     }
 
-    .header .custom-navbar-link li.active a::after{
+    .header .custom-navbar-link li.active a::after {
         width: calc(100% - 1rem);
     }
 
-    .header .custom-navbar-link li:hover a::after{
+    .header .custom-navbar-link li:hover a::after {
         width: calc(100% - 1rem);
     }
 
-    .footer{
+    .footer {
         margin-top: 12rem;
     }
 
-    .footer .footer__social-link a:hover{
+    .footer .footer__social-link a:hover {
         opacity: 1;
         background-color: var(--bg-header);
         color: var(--text-white);
     }
+}
+
+/* Form sign in / sign up */
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: #33333355;
+}
+
+.popup .form {
+    position: absolute;
+    z-index: 10;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 26rem;
+    width: 100%;
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.popup .form h2 {
+    position: relative;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.popup .form h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.1875rem;
+    width: 1.75rem;
+    border-radius: 0.75rem;
+    background: #f52920;
+}
+
+.popup .form {
+    margin-top: 1.875rem;
+}
+
+.popup .form .input-box {
+    height: 3rem;
+    margin: 1rem 0;
+}
+
+.popup .form .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #333;
+    border: 0.1rem solid #C7BEBE;
+    border-bottom-width: 0.125rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.popup .form .input-box input:focus,
+.popup .form .input-box input:valid {
+    border-color: #f52920;
+}
+
+.popup .form .policy {
+    display: flex;
+    align-items: center;
+}
+
+.popup .form h3 {
+    color: #707070;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-left: 0.625rem;
+}
+
+.popup .form .input-box.button input {
+    color: var(--bg-light);
+    letter-spacing: 0.0625rem;
+    border: none;
+    background: var(--text-price);
+    cursor: pointer;
+}
+
+.popup .form .input-box.button input:hover {
+    background: var(--text-link-blue);
+}
+
+.popup .form .text h3 {
+    color: #333;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+}
+
+.popup .form .text h3 a {
+    color: var(--text-price);
+    margin-left: 0.5rem;
+    text-decoration: none;
+}
+
+.popup .form .text h3 a:hover {
+    text-decoration: underline;
+}
+
+.popup .form .text span{
+    color: var(--text-price);
+    cursor: pointer;
+    transition: all linear 0.2s;
+}
+
+.popup .form .text span:hover{
+    opacity: 0.75;
+}
+
+.popup .form .fa-solid.fa-xmark{
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: -3rem;
+    right: -3rem;
+    color: var(--text-white);
+    background-color: #33333355;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#user-button:hover{
+    cursor: pointer;
+    opacity: 0.75;
 }
