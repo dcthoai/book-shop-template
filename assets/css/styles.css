@@ -30,6 +30,7 @@ body {
     --text-link: #3b5d50;
     --text-link-blue: #00a2ff;
     --text-price: #c92127;
+    --text-error: #f52920;
     --color-rating: #f7941d;
     --color-border: rgba(59, 93, 80, 0.8);
     --color-shadow: rgba(59, 93, 80, 0.5);
@@ -249,7 +250,7 @@ button:hover {
     height: 0.1875rem;
     width: 1.75rem;
     border-radius: 0.75rem;
-    background: #f52920;
+    background: var(--text-error);
 }
 
 .popup .form {
@@ -257,12 +258,11 @@ button:hover {
 }
 
 .popup .form .input-box {
-    height: 3rem;
     margin: 1rem 0;
 }
 
 .popup .form .input-box input {
-    height: 100%;
+    height: 2.5rem;
     width: 100%;
     outline: none;
     padding: 0 0.25rem;
@@ -275,9 +275,15 @@ button:hover {
     transition: all 0.3s ease;
 }
 
-.popup .form .input-box input:focus,
-.popup .form .input-box input:valid {
-    border-color: #f52920;
+.popup .form .input-box.invalid input {
+    border-color: var(--text-error);
+}
+
+.popup .form .input-box.invalid span.label-error{
+    display: block;
+    margin-bottom: 0.35rem;
+    font-style: italic;
+    color: var(--text-error);
 }
 
 .popup .form .policy {
@@ -345,6 +351,14 @@ button:hover {
     align-items: center;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.popup .form button{
+    width: 100%;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-white);
+    background-color: var(--text-price);
 }
 
 #user-button:hover{
