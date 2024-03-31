@@ -7,14 +7,14 @@ const formSignInHtml = `
 
         <h2>Đăng nhập</h2>
 
-        <form action="#" class="mt-4">
+        <form id="form-login" action="#" class="mt-4">
             <div class="input-box">
                 <span class="label-error"></span>
-                <input type="text" placeholder="Nhập username hoặc email">
+                <input type="text" placeholder="Nhập username hoặc email" id="account" name="account">
             </div>
             <div class="input-box">
                 <span class="label-error"></span>
-                <input type="password" placeholder="Nhập mật khẩu">
+                <input type="password" placeholder="Nhập mật khẩu" id="password" name="password">
             </div>
             <div class="input-box button">
                 <button type="submit">Đăng nhập</button>
@@ -65,12 +65,13 @@ const formSignUpHtml = `
             <div class="input-box button">
                 <button type="submit">Đăng ký ngay</button>
             </div>
-            <div class="text">
-                <h3>Bạn đã có tài khoản?
-                    <span id="login-link" class="">Đăng nhập</span>
-                </h3>
-            </div>
         </form>
+
+        <div class="text">
+            <h3>Bạn đã có tài khoản?
+                <span id="login-link" class="">Đăng nhập</span>
+            </h3>
+        </div>
     </div>
 `;
 
@@ -99,6 +100,7 @@ function viewSignIn(){
         viewSignUp();
     });
 
+    validateLogin();
     closePopup();
 }
 
@@ -106,6 +108,7 @@ function closePopup(){
     const closeForm = document.getElementById('close-form');
 
     closeForm.addEventListener('click', function(){
+        popup.innerHTML = '';
         popup.style.display = 'none';
     });
 }
@@ -131,27 +134,46 @@ function validateRegister(){
                 username: data['username'],
                 email: data['email'],
                 password: data['password']
-            }
+            };
 
-			// register(user);   // Register when validate success 
+            alert('Register success!');
+			console.log(user);
+            // Register when validate success here
         }
     });
 }
 
-function register(user) {
-	
-    fetch('/bookstore/sign-up', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(user),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
-    .catch((error) => {
-        console.log(error);
+function isValidEmail(email) {
+    const emailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    return emailRegex.test(email);
+}
+
+function validateLogin(){
+    // Validate data for login form
+    Validator({
+        form: 'form-login',
+        formInput: '.input-box',
+        errorMessage: '.label-error',
+        rules: [
+            Validator.isRequired('#account', 'Vui lòng nhập username hoặc email!'),
+            Validator.isRequired('#password', 'Vui lòng nhập mật khẩu của bạn!'),
+            Validator.minLength('#password', 8, 'Vui lòng nhập tối thiểu 8 kí tự!'),
+        ],
+        onSubmit: function(data){
+            let account = data['account'];
+            let user = {
+                password: data['password']
+            }
+
+            if (isValidEmail(account)){
+                user.email = account;       // Login with email
+            } else {
+                user.username = account;    // Login with username
+            }
+
+			alert('Login success!');
+            console.log(user);
+            // Login when validate success here
+        }
     });
 }
