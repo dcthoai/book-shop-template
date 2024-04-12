@@ -1,16 +1,20 @@
 const popup = document.getElementById('popup');
+const popupContent = document.getElementById('popup-content');
+const popupCloseButton = document.getElementById('popup-close-button');
+const userControls = document.getElementById('user-controls');
 const userButton = document.getElementById('user-button');
+const userNav = document.getElementById('user-nav');
+const logoutButton = document.getElementById('logout');
+const loadingAnimation = document.getElementById('popup-loader');
 
 const formSignInHtml = `
     <div id="form-signin" class="form">
-        <span id="close-form" class="fa-solid fa-xmark"></span>
-
         <h2>Đăng nhập</h2>
 
         <form id="form-login" action="#" class="mt-4">
             <div class="input-box">
                 <span class="label-error"></span>
-                <input type="text" placeholder="Nhập username hoặc email" id="account" name="account">
+                <input type="text" placeholder="Nhập username" id="username" name="username">
             </div>
             <div class="input-box">
                 <span class="label-error"></span>
@@ -21,24 +25,13 @@ const formSignInHtml = `
             </div>
         </form>
 
-        <div class="text pt-2">
-            <h3 class="mb-0">Bạn chưa có tài khoản? 
-                <span id="register-link" class="">Đăng ký ngay</span>
-            </h3>
-        </div>
-
-        <div class="text mt-3">
-            <h3 class="mb-0">
-                <a href="">Quên mật khẩu</a>
-            </h3>
-        </div>
+        <h3 class="change-link m-0 pt-3 w-100 text-center">Bạn chưa có tài khoản? <span id="register-link" class="link ms-1">Đăng ký ngay</span></h3>
+        <h3 class="change-link m-0 pt-2 w-100 text-center"><a href="" class="link">Quên mật khẩu</a></h3>
     </div>
 `;
 
 const formSignUpHtml = `
     <div id="form-signup" class="form">
-        <span id="close-form" class="fa-solid fa-xmark"></span>
-
         <h2>Đăng ký</h2>
 
         <form id="form-register" action="#" class="mt-4">
@@ -67,113 +60,111 @@ const formSignUpHtml = `
             </div>
         </form>
 
-        <div class="text">
-            <h3>Bạn đã có tài khoản?
-                <span id="login-link" class="">Đăng nhập</span>
-            </h3>
-        </div>
+        <h3 class="change-link m-0 pt-3 w-100 text-center">Bạn đã có tài khoản? <span id="login-link" class="link">Đăng nhập</span></h3>
     </div>
 `;
-
-userButton.addEventListener('click', function(){
-    popup.style.display = 'block';
-    viewSignIn();
-});
-
-function viewSignUp(){
-    popup.innerHTML = formSignUpHtml;
-    const loginLink = document.getElementById('login-link');
-
-    loginLink.addEventListener('click', function(){
-        viewSignIn();
-    });
-
-    validateRegister();
-    closePopup();
+function openLoadingAnimation(){
+    loadingAnimation.style.display = 'block';
+    
+    setTimeout(function(){
+		closeLoadingAnimation();
+	}, 1500);
 }
 
-function viewSignIn(){
-    popup.innerHTML = formSignInHtml;
-    const registerLink = document.getElementById('register-link');
+function closeLoadingAnimation(){
+    loadingAnimation.style.display = 'none';
+}
 
-    registerLink.addEventListener('click', function(){
-        viewSignUp();
-    });
-
-    validateLogin();
-    closePopup();
+function openPopup(content){
+    popupContent.innerHTML = content;
+    popup.style.display = 'block';
+    
+    closePopupListener();
 }
 
 function closePopup(){
-    const closeForm = document.getElementById('close-form');
-
-    closeForm.addEventListener('click', function(){
-        popup.innerHTML = '';
-        popup.style.display = 'none';
-    });
+    popupContent.innerHTML = '';
+    popup.style.display = 'none';
 }
-  
-function validateRegister(){
-    // Validate data for register form
-    Validator({
-        form: 'form-register',
-        formInput: '.input-box',
-        errorMessage: '.label-error',
-        rules: [
-            Validator.isRequired('#username', 'Vui lòng nhập tên người dùng!'),
-            Validator.isRequired('#email', 'Vui lòng nhập email của bạn!'),
-            Validator.isRequired('#password', 'Vui lòng nhập mật khẩu của bạn!'),
-            Validator.isRequired('#repeat-password', 'Vui lòng nhập lại mật khẩu của bạn!'),
-            Validator.isEmail('#email', 'Vui lòng nhập một email hợp lệ!'),
-            Validator.minLength('#password', 8, 'Vui lòng nhập tối thiểu 8 kí tự!'),
-            Validator.minLength('#repeat-password', 8, 'Vui lòng nhập tối thiểu 8 kí tự!'),
-            Validator.isConfirmed('#repeat-password', '#password', 'Vui lòng nhập lại đúng mật khẩu!')
-        ],
-        onSubmit: function(data){
-            const user = {
-                username: data['username'],
-                email: data['email'],
-                password: data['password']
-            };
 
-            alert('Register success!');
-			console.log(user);
-            // Register when validate success here
-        }
+function closePopupListener(){
+    popupCloseButton.addEventListener('click', function(){
+        closePopup();
     });
 }
 
-function isValidEmail(email) {
-    const emailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    return emailRegex.test(email);
+function openUserNav(){
+    if (userNav.classList.contains('active')){
+        userNav.classList.remove('active');
+    } else {
+        userNav.classList.add('active');
+    }
 }
 
-function validateLogin(){
-    // Validate data for login form
-    Validator({
-        form: 'form-login',
-        formInput: '.input-box',
-        errorMessage: '.label-error',
-        rules: [
-            Validator.isRequired('#account', 'Vui lòng nhập username hoặc email!'),
-            Validator.isRequired('#password', 'Vui lòng nhập mật khẩu của bạn!'),
-            Validator.minLength('#password', 8, 'Vui lòng nhập tối thiểu 8 kí tự!'),
-        ],
-        onSubmit: function(data){
-            let account = data['account'];
-            let user = {
-                password: data['password']
-            }
+function changeToRegister(){
+    openPopup(formSignUpHtml);
+    const loginLink = document.getElementById('login-link');
 
-            if (isValidEmail(account)){
-                user.email = account;       // Login with email
-            } else {
-                user.username = account;    // Login with username
-            }
-
-			alert('Login success!');
-            console.log(user);
-            // Login when validate success here
-        }
+    loginLink.addEventListener('click', function(){
+        changeToLogin();
     });
+
+    validateRegister();
+}
+
+function changeToLogin(){
+    openPopup(formSignInHtml);
+    const registerLink = document.getElementById('register-link');
+
+    registerLink.addEventListener('click', function(){
+        changeToRegister();
+    });
+
+    validateLogin();
+}
+
+function loginViews(){
+    closePopup();
+    userControls.classList.add('login');
+}
+
+function logoutViews(){
+    userControls.classList.remove('login');
+}
+
+function setLoginState(){
+	localStorage.setItem('authenticationState', true);
+}
+
+function setLogoutState(){
+	localStorage.removeItem('jwtToken');
+	localStorage.setItem('authenticationState', false);
+}
+
+function getAuthenticationSate(){
+	let status = localStorage.getItem('authenticationState');
+	
+	return status === "true";
+}
+
+function setViewsByAuthenticationState(){
+	let status = getAuthenticationSate();
+
+	if (status == true){
+        loginViews();
+       
+        userButton.onclick = function(){
+            openUserNav();    // Permit action open user nav controls if user has been authenticated
+        };
+
+        logoutButton.onclick = function(){
+            logout();       // Permit action logout if user has been authenticated
+        };
+    } else {
+        logoutViews();
+
+        userButton.onclick = function(){
+            changeToLogin();    // Permit action login if user was not authenticated
+        };      
+    }
 }
