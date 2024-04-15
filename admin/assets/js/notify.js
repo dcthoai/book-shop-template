@@ -38,3 +38,24 @@ popupNotifyCloseButton.addEventListener('click', function(){
         iconClose.style.animation = '';
     }, 500);
 });
+
+function openPopupConfirm(title, message, status, callback){
+    popupNotify.style.animation = 'appearNotify 0.75s ease forwards';
+    popupNotify.className = '';
+    popupNotify.classList.add(status);
+    popupNotify.classList.add('option');
+    popupTitle.innerHTML = title;
+    popupMessage.innerHTML = message;
+
+    const confirmButton = popupNotify.querySelector('#ok');
+    const cancellButton = popupNotify.querySelector('#cancell');
+
+    confirmButton.addEventListener('click', function(){
+        callback(true);
+    });
+
+    cancellButton.addEventListener('click', function(){
+        closePopupNotify();
+        callback(false);
+    })
+}

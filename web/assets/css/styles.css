@@ -477,7 +477,7 @@ button:hover {
 }
 
 /* Loading animation */
-#popup-loader{
+/* #popup-loader{
     position: fixed;
     top: 0;
     left: 0;
@@ -498,7 +498,7 @@ button:hover {
     border-top: 0.2rem solid #f52920;
     border-radius: 50%;
     animation: loading 0.75s ease infinite forwards;
-}
+} */
 
 @keyframes loading{
     from {

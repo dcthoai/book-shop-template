@@ -10,8 +10,6 @@
     transform: translate(-50%, -105%);
     border-radius: 0.75rem;
     box-shadow: 0 0.125rem 0.625rem 0.25rem #0000000f;
-    display: flex;
-    align-items: center;
 }
 
 #notify .notify-status i{
@@ -59,12 +57,6 @@
 	padding: 1rem 0;
 }
 
-#notify .notify-status{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #notify #notify-title{
     font-size: 1.125rem;
     font-weight: 600;
@@ -80,10 +72,8 @@
 }
 
 #notify #notify-close-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
+    display: flex;
 }
 
 #notify #notify-close-button i.fa-xmark{
@@ -93,6 +83,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#notify.option #notify-close-button{
+    display: none;
+}
+
+#notify.option .notify-response{
+    display: flex;
+}
+
+#notify .notify-response{
+    display: none;
+}
+
+#notify .notify-response .ok{
+    background-color: #54ce02;
+    color: #fff;
+}
+
+#notify .notify-response .cancell{
+    background-color: #ff4444;
+    color: #fff;
 }
 
 @keyframes closeNotify{

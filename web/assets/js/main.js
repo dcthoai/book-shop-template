@@ -63,6 +63,7 @@ const formSignUpHtml = `
         <h3 class="change-link m-0 pt-3 w-100 text-center">Bạn đã có tài khoản? <span id="login-link" class="link">Đăng nhập</span></h3>
     </div>
 `;
+
 function openLoadingAnimation(){
     loadingAnimation.style.display = 'block';
     

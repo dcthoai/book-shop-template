@@ -1,0 +1,28 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-dark: #212529;
+    --bg-cc: #212121;
+    --bg-light: #fff;
+}
+
+.content{
+
+}
+
+.content .navbar-left{
+    width: 14rem;
+    padding-top: 4rem;
+    background-color: var(--bg-dark);
+}
+
+.content .content-wrapper{
+    flex: 1;
+    padding-top: 4rem;
+    background-color: var(--bg-light);
+}
