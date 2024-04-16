@@ -7,22 +7,123 @@
 
 :root{
     --bg-dark: #212529;
-    --bg-cc: #212121;
+    --bg-semi-dark: #282828;
+    --bg-gray: #3c3c3c;
+    --bg-semi-gray: #000000cc;
     --bg-light: #fff;
+    --bg-hover-btn: #424649;
+    --text-danger: #ff0400;
+    --text-edit: #0099ff;
+    --color-border: rgba(59, 93, 80, 0.8);
+    --color-shadow: rgba(59, 93, 80, 0.5);
 }
 
 .content{
-
+    background-color: var(--bg-semi-gray);
 }
 
 .content .navbar-left{
     width: 14rem;
     padding-top: 4rem;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-semi-dark);
+}
+
+.content .navbar-left .navbtn{
+    padding: 0.375rem 0;
+    padding-left: 2rem;
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+.content .navbar-left .navbtn:hover{
+    opacity: 1;
+    background-color: var(--bg-hover-btn);
+}
+
+.content .navbar-left .accordion,
+.content .navbar-left .accordion-item,
+.content .navbar-left .accordion-button,
+.content .navbar-left .accordion-body{
+    background-color: var(--bg-semi-dark) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.content .navbar-left .accordion-button::after{
+    background-image: url(../images/icon-down.png) !important;
+    background-size: 0.75rem;
+    background-position: center;
+}
+
+.content .navbar-left .accordion-body{
+    color: var();
 }
 
 .content .content-wrapper{
     flex: 1;
     padding-top: 4rem;
-    background-color: var(--bg-light);
+    overflow-y: scroll;
+}
+
+.content .form-search-input{
+    width: 16rem;
+    padding: 0.375rem 0;
+    border: 0.0625rem solid var(--color-border);
+    border-radius: 0.375rem;
+    text-indent: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: all ease 0.2s;
+}
+
+.content .form-search-input:focus {
+    outline: none;
+    border-color: var(--color-border);
+    box-shadow: 0 0.0625rem 0.25rem 0 var(--color-shadow);
+}
+
+.content .card-body .table th > input[type="checkbox"],
+.content .card-body .table td > input[type="checkbox"]{
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.content .card-body .table .table-title,
+.content .card-body .table .table-author{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--bg-gray);
+}
+
+.content .card-body .table .table-price,
+.content .card-body .table .table-discount{
+    color: var(--text-danger);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.content .card-body .table .table-cost{
+    color: var(--bg-gray);
+    font-weight: 600;
+    opacity: 0.75;
+}
+
+.content .card-body .table .table-remainder{
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-edit);
+}
+
+.content .card-body .table .edit-book,
+.content .card-body .table .delete-book {
+    text-decoration: none;
+    text-align: center;
+}
+
+.content .card-body .table .delete-book{
+    color: var(--text-danger);
+    margin-left: 0.4rem;
 }
