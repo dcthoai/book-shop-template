@@ -53,7 +53,7 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="dashboard.html">Quản trị viên</a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-dark btn-sm order-1 order-lg-0 ms-md-5 me-3 me-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#sideBarNav">
+        <button class="btn btn-dark btn-sm order-1 order-lg-0 ms-lg-5 me-3 me-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#sideBarNav">
             <i class="fas fa-bars"></i>
         </button>
         
@@ -165,20 +165,20 @@
         <div class="vh-100 content-wrapper px-2 px-lg-4">
             <h4 class="p-3 ps-0 fs-4 text-light fw-semibold">Quản lý sản phẩm</h4>
 
-            <div class="w-100 d-flex justify-content-between my-4">
-                <div class="d-flex">
-                    <input type="text" class="h-100 form-control form-search-input" id="search-book-input" placeholder="Nhập tên sách">
+            <div class="w-100 d-flex flex-wrap justify-content-between my-4">
+                <div class="d-flex form-search-book mb-4">
+                    <input type="text" class="flex-1 h-100 form-control form-search-input" id="search-book-input" placeholder="Nhập tên sách">
                     <button type="button" class="ms-2 btn btn-primary py-0 fw-medium" id="search-book-button">Tìm kiếm</button>
                 </div>
 
-                <button type="button" class="btn btn-primary py-0 fw-medium">Thêm sách</button>
+                <button id="add-new-book" type="button" class="btn btn-primary py-0 fw-medium">Thêm sách</button>
             </div>
 
             <div class="card mb-4 w-100">
-                <div class="card-header d-flex justify-content-between align-items-center py-3">
-                    <div class="fs-5 fw-medium opacity-75"><i class="fas fa-table me-3"></i>Danh sách sản phẩm</div>
+                <div class="card-header d-flex flex-wrap justify-content-between align-items-center py-3">
+                    <div class="mb-3 fs-5 fw-medium opacity-75"><i class="fas fa-table me-3"></i>Danh sách sản phẩm</div>
 
-                    <div class="panigations-box">
+                    <div class="panigations-box ms-auto">
                         <nav>
                             <ul class="pagination m-0">
                                 <li class="page-item">
@@ -222,7 +222,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -239,7 +239,24 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
+                                <td class="table-date text-center ">2011/04/25</td>
+                                <td>
+                                    <div class="w-100 h-100 d-flex justify-content-evenly">
+                                        <a href="" class="flex-fill edit-book"><i class="fa-regular fa-pen-to-square"></i></a>
+                                        <a href="" class="flex-fill delete-book"><i class="fa-regular fa-trash-can"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="checkbox" name="table-select"></td>
+                                <td class="table-title">Hail Mary Hail Mary Hail Mary</td>
+                                <td class="table-author">Eric Paul</td>
+                                <td class="table-price text-center ">124.500</td>
+                                <td class="table-cost text-center ">124.500</td>
+                                <td class="table-discount text-center ">5%</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -256,7 +273,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -273,7 +290,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -290,7 +307,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -307,7 +324,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -324,7 +341,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -341,7 +358,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -358,7 +375,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -375,7 +392,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -392,7 +409,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -409,7 +426,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -426,7 +443,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -443,7 +460,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -460,7 +477,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -477,7 +494,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -494,7 +511,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -511,7 +528,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -528,7 +545,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -545,7 +562,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">
@@ -562,24 +579,7 @@
                                 <td class="table-price text-center ">124.500</td>
                                 <td class="table-cost text-center ">124.500</td>
                                 <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
-                                <td class="table-date text-center ">2011/04/25</td>
-                                <td>
-                                    <div class="w-100 h-100 d-flex justify-content-evenly">
-                                        <a href="" class="flex-fill edit-book"><i class="fa-regular fa-pen-to-square"></i></a>
-                                        <a href="" class="flex-fill delete-book"><i class="fa-regular fa-trash-can"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td><input type="checkbox" name="table-select"></td>
-                                <td class="table-title">Hail Mary</td>
-                                <td class="table-author">Eric Paul</td>
-                                <td class="table-price text-center ">124.500</td>
-                                <td class="table-cost text-center ">124.500</td>
-                                <td class="table-discount text-center ">5%</td>
-                                <td class="table-remainder text-center ">61</td>
+                                <td class="table-stock text-center ">61</td>
                                 <td class="table-date text-center ">2011/04/25</td>
                                 <td>
                                     <div class="w-100 h-100 d-flex justify-content-evenly">

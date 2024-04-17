@@ -67,6 +67,7 @@
 
 .content .form-search-input{
     width: 16rem;
+    max-width: 100%;
     padding: 0.375rem 0;
     border: 0.0625rem solid var(--color-border);
     border-radius: 0.375rem;
@@ -81,6 +82,28 @@
     outline: none;
     border-color: var(--color-border);
     box-shadow: 0 0.0625rem 0.25rem 0 var(--color-shadow);
+}
+
+.content #add-new-book{
+    height: 2.25rem;
+}
+
+.content .content-wrapper .card .card-body{
+    overflow-x: scroll;
+}
+
+.content .card-body .table th:not(:first-child),
+.content .card-body .table td:not(:first-child) {
+    min-width: 7.5rem;
+}
+
+.content .card-body .table th:nth-child(2),
+.content .card-body .table td:nth-child(3) {
+    min-width: 14rem;
+}
+
+.content .card-body .table td{
+    vertical-align: middle;
 }
 
 .content .card-body .table th > input[type="checkbox"],
@@ -111,7 +134,7 @@
     opacity: 0.75;
 }
 
-.content .card-body .table .table-remainder{
+.content .card-body .table .table-stock{
     font-size: 1.125rem;
     font-weight: 500;
     color: var(--text-edit);
@@ -126,4 +149,46 @@
 .content .card-body .table .delete-book{
     color: var(--text-danger);
     margin-left: 0.4rem;
+}
+
+@media (max-width: 991px){
+    .content #sideBarNav{
+        position: absolute;
+        z-index: 1020;
+    }
+}
+
+@media (max-width: 575px) {
+    .content .form-search-book{
+        width: 35rem;
+        max-width: 100%;
+    }
+}
+
+.flex-1{
+    flex: 1;
+}
+
+@media (min-width: 576px) {
+    .flex-sm-1{
+        flex: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .flex-md-1{
+        flex: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .flex-lg-1{
+        flex: 1;
+    }
+}
+
+@media (min-width: 1200px) {
+    .flex-xl-1{
+        flex: 1;
+    }
 }
