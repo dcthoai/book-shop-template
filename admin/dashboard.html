@@ -53,7 +53,7 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="dashboard.html">Quản trị viên</a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-dark btn-sm order-1 order-lg-0 ms-lg-5 me-3 me-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#sideBarNav">
+        <button class="btn btn-dark btn-sm order-1 order-lg-0 ms-md-5 me-3 me-lg-0" type="button" data-bs-toggle="collapse" data-bs-target="#sideBarNav">
             <i class="fas fa-bars"></i>
         </button>
         
@@ -74,11 +74,11 @@
     <div class="content d-flex vw-100">
         <div class="collapse collapse-horizontal show vh-100" id="sideBarNav">
             <div class="h-100 navbar-left">
-                <!--  -->
+                <!-- Sidebar controls -->
                 <div class="accordion pt-3" id="accordionNav">
                     <div class="accordion-item border-0">
                         <h2 class="accordion-header">
-                            <button class="accordion-button py-3" type="button" 
+                            <button class="accordion-button px-4 py-3" type="button" 
                                                                     data-bs-toggle="collapse" 
                                                                     data-bs-target="#collapse-general" 
                                                                     aria-expanded="true" 
@@ -88,12 +88,12 @@
                         </h2>
                         <div id="collapse-general" class="accordion-collapse collapse show" data-bs-parent="#accordionNav">
                             <div class="accordion-body px-0 pt-0">
-                                <div class="text-light fs-6 fw-normal">
-                                    <div class="navbtn">Sản phẩm</div>
-                                    <div class="navbtn">Blogs</div>
-                                    <div class="navbtn">Slides quảng cáo</div>
-                                    <div class="navbtn">Đơn hàng</div>
-                                    <div class="navbtn">Người dùng</div>
+                                <div class="">
+                                    <a href="dashboard.html" class="text-decoration-none"><div class="navbtn">Sản phẩm</div></a>
+                                    <a href="blog.html" class="text-decoration-none"><div class="navbtn">Blogs</div></a>
+                                    <a href="slide.html" class="text-decoration-none"><div class="navbtn">Quảng cáo</div></a>
+                                    <a href="order.html" class="text-decoration-none"><div class="navbtn">Đơn hàng</div></a>
+                                    <a href="users.html" class="text-decoration-none"><div class="navbtn">Người dùng</div></a>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
 
                     <div class="accordion-item border-0">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed py-3" type="button" 
+                            <button class="accordion-button collapsed px-4 py-3" type="button" 
                                                                             data-bs-toggle="collapse" 
                                                                             data-bs-target="#collapse-discount" 
                                                                             aria-expanded="false" 
@@ -112,8 +112,8 @@
                         <div id="collapse-discount" class="accordion-collapse collapse" data-bs-parent="#accordionNav">
                             <div class="accordion-body px-0 pt-0">
                                 <div class="text-light fs-6 fw-normal">
-                                    <div class="navbtn">Giảm giá</div>
-                                    <div class="navbtn">Khác</div>
+                                    <a href="dashboard.html" class="text-decoration-none"><div class="navbtn">Giảm giá</div></a>
+                                    <a href="dashboard.html" class="text-decoration-none"><div class="navbtn">Khác</div></a>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
 
                     <div class="accordion-item border-0">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed py-3" type="button" 
+                            <button class="accordion-button collapsed px-4 py-3" type="button" 
                                                                             data-bs-toggle="collapse" 
                                                                             data-bs-target="#collapse-chart" 
                                                                             aria-expanded="false" 
@@ -132,8 +132,8 @@
                         <div id="collapse-chart" class="accordion-collapse collapse" data-bs-parent="#accordionNav">
                             <div class="accordion-body px-0 pt-0">
                                 <div class="text-light fs-6 fw-normal">
-                                    <div class="navbtn">Doanh số</div>
-                                    <div class="navbtn">Biểu đồ</div>
+                                    <a href="dashboard.html" class="text-decoration-none"><div class="navbtn">Doanh số</div></a>
+                                    <a href="dashboard.html" class="text-decoration-none"><div class="navbtn">Biểu đồ</div></a>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
 
                     <div class="accordion-item border-0">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed py-3" type="button" 
+                            <button class="accordion-button collapsed px-4 py-3" type="button" 
                                                                             data-bs-toggle="collapse" 
                                                                             data-bs-target="#collapse-system" 
                                                                             aria-expanded="false" 
@@ -152,8 +152,8 @@
                         <div id="collapse-system" class="accordion-collapse collapse" data-bs-parent="#accordionNav">
                             <div class="accordion-body px-0 pt-0">
                                 <div class="text-light fs-6 fw-normal">
-                                    <div class="navbtn">Thanh toán</div>
-                                    <div class="navbtn">Hỗ trợ</div>
+                                    <a href="dashboard.html" class="text-decoration-none"><div class="navbtn">Thanh toán</div></a>
+                                    <a href="dashboard.html" class="text-decoration-none"><div class="navbtn">Hỗ trợ</div></a>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
         </div>
 
         <div class="vh-100 content-wrapper px-2 px-lg-4">
-            <h4 class="p-3 ps-0 fs-4 text-light fw-semibold">Quản lý sản phẩm</h4>
+            <h4 class="p-3 ps-lg-0 fs-4 text-light fw-semibold">Quản lý sản phẩm</h4>
 
             <div class="w-100 d-flex flex-wrap justify-content-between my-4">
                 <div class="d-flex form-search-book mb-4">
@@ -171,7 +171,9 @@
                     <button type="button" class="ms-2 btn btn-primary py-0 fw-medium" id="search-book-button">Tìm kiếm</button>
                 </div>
 
-                <button id="add-new-book" type="button" class="btn btn-primary py-0 fw-medium">Thêm sách</button>
+                <a href="add-book.html" class="text-decoration-none">
+                    <button type="button" class="btn btn-primary py-0 fw-medium add-new">Thêm sách</button>
+                </a>
             </div>
 
             <div class="card mb-4 w-100">
@@ -199,7 +201,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="" class="w-100 table table-striped table-bordered table-hover">
+                    <table id="table-list-books" class="w-100 table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th class=""><input type="checkbox" name="table-select-all" id="table-select-all"></th>
